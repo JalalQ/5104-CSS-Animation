@@ -1,0 +1,156 @@
+<!--
+The HTML file for the Ambulance Animation Assignment.
+Created by Jalaluddin Qureshi for the Digitial Design course (HTTP5104).
+Humber College, Toronto, Canada (Fall 2020).
+-->
+
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <title>Ambulance On Call Animation</title>
+        <meta name="description" content="Content" />
+        <link rel="stylesheet" type="text/css" href="css/ambulance.css" >
+    </head>
+    
+    <body>
+        
+        <header id="header">
+            <div class="page-wrapper">
+                <h1>Interactive Ambulance Driver Animation</h1>
+            </div>
+        </header>
+        
+        <div class="page-wrapper">
+            
+            <!-- All the animation objects will be inside this container -->
+            <main>
+                
+                <div class="animation-page">
+                    
+                    <div class="sky">
+                        <h2 class="hidden">Sky with hospital, tree, and clouds.</h2>
+                        
+                        <div class="hospital"></div>
+                        <div class="tree1"></div>
+                        <div class="tree2"></div>
+                        <div class="sun"></div>
+                        
+                        <div class="building">
+                            <div class="building-windows"></div>
+                        </div>
+                        <!--Cloud should be at the bottom of sky container -->
+                        <div class="cloud1"><h2 class="hidden">Moving Clouds</h2></div>
+                        <div class="cloud2"><h2 class="hidden">Moving Clouds</h2></div>
+                    </div>
+                    
+                    <!-- Road object -->
+                    <div class="road-object">
+                        <h2 class="hidden">Road</h2>
+                        <div class="road-lines"></div>
+                    </div>
+                    
+                    <!-- Ambulance object -->
+                    <div id="ambulance-object">
+                        <h2 class="hidden">Moving Ambulance with Siren.</h2>
+
+                        <div class="backside">
+
+                            <!--Cross sign -->
+                            <div class="cross-horizontal"></div>
+                            <div class="cross-vertical"></div>
+
+                            <!--Horizontal orange strip -->
+                            <div class="strip-horizontal"></div>
+                            
+                            <!--Siren Light-->
+                            <div id="light-back"></div>
+                            <div id="light-front"></div>
+
+                        </div>
+                        
+                        <div id="siren"></div>
+                        
+                        <div class="frontside">
+                            <div class="frontup">
+                                <div class="window"></div>
+                            </div>
+
+                            <div class="frontbottom">
+                                <div class="door">
+                                    <div class="door-handle"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Wheels conainer-->
+                        <div>
+                            <div class="wheel wheelLeft">
+                                <div class="wheel-vertical"></div>
+                                <div class="wheel-horizontal"></div>
+                            </div>
+
+                            <div class="wheel wheelRight">
+                                <div class="wheel-vertical"></div>
+                                <div class="wheel-horizontal"></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    
+                </div><!-- Animation container -->
+                
+                
+                <!-- 
+                Buttons to change the animations of ambulance. 
+                -->
+                <div id="columns">
+                    <!--The audio display is hidden. 
+                    It is played whenever the user clicks on "Turn on Siren" button.
+                    MP3 downloaded from: soundsnap.com -->
+                    <audio id="audio" class="hidden" controls>
+                        <source src="audio/siren.mp3" type="audio/mpeg">
+                        <source src="audio/siren.wav" type="audio/wav">
+                        <source src="audio/siren.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <h2 id="ctrl">Sit on the driver's seat - <strong>Ctrl</strong> the ambulance!</h2>
+                    
+                    <div class="col-33">
+                        <h3>Siren + Sound</h3>
+                        <button id="siren-on">Turn ON</button> 
+                        <button id="siren-off">Turn OFF</button> 
+                    </div>
+
+                    <div class="col-33">
+                        <h3>Movement</h3>
+                        <button id="move">MOVE</button>
+                        <button id="stop">STOP</button> 
+                    </div>
+                    
+                    <div class="col-33">
+                        <h3>Speed</h3>
+                        <button id="speed-fast">FAST</button>
+                        <button id="speed-default">DEFAULT</button>
+                    </div>
+                    
+                </div>
+                
+                
+            </main>
+        </div>
+        
+        
+        <footer>
+          <div class="page-wrapper">
+              <h2 class="hidden">Footer</h2>
+              <p>&copy; Copyright Jalaluddin Qureshi, Humber College, Toronto, Canada.</p>         
+          </div>
+        </footer>
+        
+        <script src="javascript/ambulance.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,700 @@
+/* 
+CSS Style created by Jalaluddin Qureshi for the Digitial Design course (HTTP5104).
+Ambulance animation.
+Humber College, Toronto, Canada (Fall 2020).
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300&family=Ubuntu&display=swap');
+
+/* DEFAULT ELEMENT STYLING */
+html {
+  box-sizing:border-box;
+  font: 'Arial', 'Open Sans',sans-serif;
+  color:#202228;
+  /*background-color:#fffcf0;*/
+}
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+
+body {
+    background-color:  #fcfcc9;
+}
+
+/* GENERAL USE CLASSES */
+.page-wrapper {
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.hidden {
+    position:absolute;
+    left:-10000px;
+    width:1px;
+    height:1px;
+}
+
+#header {
+    background-color:#7e1011;
+    color:#faf2f3;
+    padding:0.25em;
+    margin-top:0.5em;
+}
+
+h1 {
+    font: 2em 'consolas', sans-serif;
+    text-align: center;
+}
+
+#ctrl {
+    font: 1.5em 'consolas', sans-serif;
+    text-align: center;  
+    margin-bottom:0.4em;
+    margin-top:0.1em;
+}
+
+h3 {
+    font: 1.25em 'consolas', sans-serif;
+    margin-top:0;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #7e1011;
+    margin-bottom: 0.5em;
+    margin-top:11em;
+    
+}
+
+footer .page-wrapper {
+    padding: 0.5em 0em;
+}
+
+footer p {
+    color:#faf2f3;
+    font: 1.5em 'consolas', sans-serif;
+}
+
+/* ******************** */
+/* ANIMATION            */
+/* ******************** */
+
+/* all animation objects will be inside this container.s*/
+.animation-page {
+    /*The overflow property specifies what should happen if content overflows an element's box.*/
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+    margin: 1em 0em;
+    padding: 0em 2em 2em 2em; /*Padding is required to admit rotations */
+    border-style: solid;
+}
+
+/* ******************** */
+/* SKY  Container       */
+/* ******************** */
+.sky {
+    width:115%;
+    height:320px;
+    background: linear-gradient(to bottom right, #64a0dc 0%, #a4cef8 100%);
+    margin-left: -35px;
+    position:relative;
+    margin-bottom:-35px;
+}
+
+/* ******************** */
+/* Object inside Sky    */
+/* Sun, Building, Trees,*/
+/* Hospital, Clouds.    */
+/* ******************** */
+.sun {
+    border-radius: 50%; 
+    width: 30px; 
+    height: 30px; 
+    background-color: orange; 
+    box-shadow: 0 0 30px 30px  #ffde00; 
+    top:20%;
+    left:15%;
+    position: absolute;
+}
+
+.building {
+    height: 240px;
+    width: 100px;
+    background:  #9a90a2;
+    position: absolute;
+    bottom:0;
+    left:30%;
+    border:solid;
+}
+
+.building-windows{
+    width: 65%;
+    height: 90%;
+    position: absolute;
+    border-right: 15px dashed  #5388c7;
+    border-left: 15px dashed  #5388c7;
+    top:5%;
+    left:20%;
+}
+
+.hospital {
+    width:128px;
+    height:128px;
+    background: url("../images/hospital.png"); /*Icon taken from flaticon.com*/
+    position: absolute;
+    bottom:0%;
+    right:10%;
+}
+
+.tree1, .tree2 {
+    width:128px;
+    height:128px;
+    background: url("../images/treedark.png"); /*Icon taken from flaticon.com*/
+    position: absolute;
+    bottom:0%;
+}
+
+.tree1{
+    left:7%;
+}
+
+.tree2{
+    left:12%;
+}
+
+.cloud1 {
+    width:120px;
+    height:100px;
+    background: url("../images/cloud1.png"); /*Icon taken from flaticon.com*/
+    position: absolute;
+    top:25%;
+    animation: moving-cloud1 45s infinite ease-out reverse ;
+}
+
+.cloud2 {
+    width:128px;
+    height:128px;
+    background: url("../images/cloud2.png"); /*Icon taken from flaticon.com*/
+    position: absolute;
+    top:1%;
+    animation: moving-cloud1 21s infinite ease-in reverse ;
+}
+
+
+@-webkit-keyframes moving-cloud1 {
+  0% {
+    left:-3%
+  }
+  100% {
+    left:103%
+  }
+}
+
+@keyframes moving-cloud1 {
+  0% {
+    left:-3%
+  }
+  100% {
+    left:103%
+  }
+}
+
+@-webkit-keyframes moving-cloud2 {
+  0% {
+    left:-3%
+  }
+  100% {
+    left:103%;
+  }
+}
+
+@keyframes moving-cloud2 {
+  0% {
+    left:-3%
+  }
+  100% {
+    left:103%;
+  }
+}
+
+/* ******************** */
+/* Road Object          */
+/* ******************** */
+.road-object {
+  width: 105%;
+  height: 150px;
+  background-color:  #af834f;
+  border-top: 5px solid  #091315 ;
+  border-bottom: 5px solid  #091315 ;
+  position: absolute;
+  bottom: 0%;
+  margin-left: -35px;
+}
+
+.road-lines {
+  height: 10px;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  border-top: 20px dashed #f7faba;
+}
+
+/* ******************** */
+/* Ambulance object     */
+/* ******************** */
+#ambulance-object {
+    position: relative;
+    width: 240px;
+    height:150px;
+    animation: driving 12s infinite linear;
+ /*   transform: scale(0.5); to be used for responsiveness */
+ /*   background-color: #f2f4fa;*/
+}
+
+.backside {
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    background-color: #f2f7f7;
+    border-style: solid;
+    max-width: 100%;
+    width: 65%;
+    height: 80%;
+    position: relative;
+    top: 5%;
+}
+
+/* Backsid Red Light Glow Animation */
+.backside:before {
+    position: absolute;
+    bottom: 10px;
+    right: 153px;
+    content: " ";
+    width: 7%;
+    height: 15%;
+    border-top:solid;
+    border-top-left-radius: 40%;
+    border-bottom:solid;
+    border-bottom-left-radius: 40%;
+    border-left:solid;
+    background-color: red;
+    animation: back-light 1s infinite;
+    z-index: -1;
+}
+
+@-webkit-keyframes back-light {
+  50%{
+       box-shadow: -8px 0px 10px orangered;
+  }
+  100%{
+      box-shadow: 0px 0px 0px coral;   
+  }
+}
+
+@keyframes back-light{
+  50%{
+       box-shadow: -12px 0px 12px red;
+  }
+  100%{
+      box-shadow: -5px 0px 6px orangered;   
+  }
+}
+
+.cross-horizontal {
+    background-color: orangered;
+    width:30%;
+    height:12%;
+    max-width: 100%;
+    position:absolute;
+    top:30%;
+    left: 35%;
+}
+
+.cross-vertical {
+    background-color: orangered;
+    width:12%;
+    height:32%;
+    max-width: 100%;
+    position:absolute;
+    top:20%;
+    left: 45%;
+}
+
+
+.strip-horizontal {
+    background-color: orangered;
+    width:100%;
+    height:20%;
+    position:absolute;
+    top:60%;
+    border-top-style:solid;
+    border-bottom-style: solid;
+
+}
+
+#light-back, #light-front {
+    border-radius: 30%;
+    width: 12px;
+    height: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 8%;
+    animation: doesnothing infinite;
+}
+
+#light-front {
+    right:15%;
+    animation-duration: 0.9s;
+}
+
+#light-back {
+    left:15%;    
+    animation-duration: 0.7s;
+}
+
+@-webkit-keyframes light-on {
+  10% {
+    background:darkorange;
+  }
+  50% {
+    background:;
+      color: wheat;
+  }
+}
+
+@keyframes light-on {
+  10% {
+    background:darkorange;
+  }
+  50% {
+    background:;
+      color: wheat;
+  }
+
+}
+
+#siren {
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    width: 10%;
+    height: 15%;
+    border-style: solid;
+    position: absolute;
+    background-color: aquamarine;
+    opacity: 0.85;
+    top: 10%;
+    left:70%;
+    animation: animateSiren 0.5s infinite;
+}
+
+@-webkit-keyframes doesnothing {
+}
+
+@keyframes doesnothing {
+}
+
+@-webkit-keyframes animateSiren {
+  10% {
+    background:red;
+  }
+  50% {
+    background:blue;
+  }
+}
+
+@keyframes animateSiren {
+  0% {
+    background:red;
+  }
+  50% {
+    background:blue;
+  }
+
+}
+
+.frontside {
+    max-width: 100%;
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    top: 17%;
+    left:65%;
+}
+
+.frontup {
+    border-top-right-radius: 50%;
+    background-color: #f2fcff;
+    border-top-style: solid;
+    border-right-style: solid;
+    width:60%;
+    height:40%;
+    max-width: 100%;
+    position:absolute;
+    top:5%;
+    left: 0%;
+}
+
+.window {
+    background-color: #32c2bf;
+    border-top-right-radius: 15px;
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    margin: 17px;
+    border: solid;
+}
+
+
+.frontbottom {
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 0%;
+    background-color: white;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    background-color: #e8f5fa;
+    width:90%;
+    height:45%;
+    max-width: 100%;
+    position:absolute;
+    top:40%;
+    left: 0%;
+}
+
+/* the following code generates the front headlight */
+.frontbottom:after {
+    position: absolute;
+    bottom: 0px;
+    right: -200px;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 250px solid rgba(255, 255, 0, 0.25);
+    z-index: -1;
+}
+
+/* Door and Door handle */
+.door {
+    width: 50%;
+    height: 60%;
+    border: 3px solid;
+    position: absolute;
+    left: 18%;
+    top: 10%;
+    border-radius: 10% 40% 10% 10%;
+}
+
+.door-handle {
+    width: 35%;
+    height: 20%;
+    background-color: coral;
+    border-radius: 30%;
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    border: 1px solid;
+}
+
+/* ******************** */
+/*   WHEELS             */
+.wheel {
+    width: 35px;
+    height: 35px;
+    background-color: #abc1c9;
+    border-radius: 50%;
+    border: 5px solid black;
+    position: absolute;
+    bottom: 0;
+    animation: wheelsRotate 4s infinite linear;
+}
+
+.wheelLeft {
+    left: 10%;
+}
+
+.wheelRight {
+    right: 10%;
+}
+
+.wheel-vertical{
+    width: 3px;
+    height: 26px;
+    background-color: #525469;
+    position: absolute;
+    left: 45%;
+    bottom:0%;
+}
+
+.wheel-horizontal {
+    width: 26px;
+    height: 3px;
+    background-color: #31383b;
+    position: absolute;
+    bottom: 45%;
+    left:0%;
+}
+
+/* Animations for the wheel. Supprts various browsers*/
+@-webkit-keyframes wheelsRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wheelsRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ******************** */
+/* ******************** */
+
+/* Ambulance moving */
+/* The rotate property is used to illustrate that the ambulance is moving/ bouncing in a rush */
+@-webkit-keyframes driving {
+  0% {
+    left: -10%;
+  }
+  10% {
+    bottom: 0%;
+  }
+  20% {
+    transform: scale(0.98) rotate(3deg);
+  }
+  35% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    left: 105%;
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes driving {
+  0% {
+    left: -10%;
+  }
+  10% {
+    bottom: 0%;
+  }
+  20% {
+    transform: scale(0.98) rotate(3deg);
+  }
+  35% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    left: 105%;
+    transform: rotate(1deg);
+  }
+}
+
+/* ******************** */
+/* Form Buttons         */
+/* ******************** */
+form {
+    margin: 2em 1em;
+}
+
+button{
+    padding:5px 5px;
+    border-radius:10px;
+    cursor: pointer;
+    margin: 0em 1em 0.5em 1em;
+    font-size:1.1em;
+    font-weight:bold;
+    font-family: 'Karma', serif;
+    padding: 0.25em 0.75em;
+    box-shadow: 2px 2px  #a4a990 ;
+    border:2px solid black;
+}
+
+#columns {
+    margin-bottom: 1em;
+    float:left; 
+    width:100%;
+    text-align:center;
+}
+
+.col-33 {
+    width:33.3%;
+    float:left;
+    border:2px solid;
+    padding:0.5em 0.5em;
+}
+
+#siren-on, #move, #speed-fast {
+    background-color: #386C0B;
+    color:cornsilk;
+    transition: all 1s;
+}
+
+#siren-on:hover, #move:hover, #speed-fast:hover {
+    color: #F1D302 ;
+    background-color: #371E30;
+}
+
+#siren-off, #stop, #speed-default {
+    color:#011936;
+    background-color: orange;
+    transition: all 1s;
+}
+
+#siren-off:hover, #stop:hover, #speed-default:hover {
+    color:black;
+    background-color: #E6E49F;
+}
+
+/* ******************** */
+/* MEDIA QUERIES        */
+/* ******************** */
+
+@media all and (max-width:950px) {
+    button {
+        font-size:0.95em;
+    }
+}
+
+/* Tablet styles */
+@media all and (max-width:810px) {
+    
+    button {
+        font-size:0.75em;
+    }
+    
+    h1 {
+        font: 1.75em 'consolas', sans-serif;
+    }
+    footer {
+        margin-top:15em;    
+    }
+    footer p {
+        font: 1.25em 'consolas', sans-serif;
+    }
+}
+
+/* Phone styles */
+@media screen and (max-width:480px) {
+
+    h1 {
+        font: 0.7em 'consolas', sans-serif;
+    }
+    
+}
