@@ -1,5 +1,5 @@
 # Introduction
-CSS Animation. The animation was created almost entirely using CSS. Javascript was used to make the animation **interactive**, by allowing the user to control the ambulance animation. Three interactions were used:
+CSS Animation. The animation was created entirely using CSS. Javascript was used to make the animation **interactive**, by allowing the user to control the ambulance animation. Three interactions were used:
 1. **Siren + Sound** - When the user turns this ON, the ambulance light start blinking, and the siren sound is turned on. The user can switch this off.
 2. **Movement** - The user can control when to stop/ start the ambulance.
 3. **Speed** - The user can increase/ decrease the speed of the ambulance.
